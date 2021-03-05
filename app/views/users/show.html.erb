@@ -1,13 +1,23 @@
-<!--ユーザー一覧画面-->
-<div class="user-left">
+<!--ユーザー詳細-->
+<div class="user-info">
     <h1>User info</h1> 
     <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
     <p>name <%= @user.name %></p>
     <P>imtroduction <%= @user.introduction %></P>
 </div>
 
-<div class="user-list">
-    <% @users.each do |user| %>
-        <%= user.name %>
+<% if @user.id == current_user.id %>
+    <p><%= link_to "profile Edit", edit_user_path(@user) %></p>
+ <% end %>
+ 
+ <div class="new-book">
+    <h1>New book</h1>
+    <%= form_with model:@book, locl:true do |f| %>
+      <h4>Title</h4>
+      <%= f.text_field :title %>
+      <h4>Opinion</h4>
+      <%= f.text_area :body %>
+      <%= f.submit 'Create Book' %>
     <% end %>
 </div>
+

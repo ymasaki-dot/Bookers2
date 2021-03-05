@@ -1,0 +1,8 @@
+<!--投稿詳細画面-->
+<h1>Book detail</h1>
+<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+<%= link_to @book.user.name, user_path(@book.user.id) %>
+<%=link_to @book.title, book_path(@book.id) %> <%= @book.body %>
+
+<%= link_to "Edit", edit_book_path(@book.id) %> <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか?" %>
+
