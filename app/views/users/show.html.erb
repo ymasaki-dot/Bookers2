@@ -1,0 +1,13 @@
+<!--ユーザー一覧画面-->
+<div class="user-left">
+    <h1>User info</h1> 
+    <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+    <p>name <%= @user.name %></p>
+    <P>imtroduction <%= @user.introduction %></P>
+</div>
+
+<div class="user-list">
+    <% @users.each do |user| %>
+        <%= user.name %>
+    <% end %>
+</div>
