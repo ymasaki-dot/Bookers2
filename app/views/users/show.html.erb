@@ -4,12 +4,10 @@
     <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
     <p>name <%= @user.name %></p>
     <P>imtroduction <%= @user.introduction %></P>
+    <p><%= link_to "profile Edit", edit_user_path(@user) %></p>
 </div>
 
-<% if @user.id == current_user.id %>
-    <p><%= link_to "profile Edit", edit_user_path(@user) %></p>
- <% end %>
- 
+
  <div class="new-book">
     <h1>New book</h1>
     <%= form_with model:@book, locl:true do |f| %>
