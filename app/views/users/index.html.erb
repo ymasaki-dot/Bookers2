@@ -1,10 +1,8 @@
 <!--ユーザー一覧画面-->
+<div class="user-info">
 <h1>User info</h1>
- <p>image</p>
-  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
-  <p>name <%= @user.name %></p>
-  <p>introduction <%= @user.introduction %></p>
-
+<%= attachment_image_tag @user, :profile_image, :fill, 80, 80, fallback: "no_image.jpg"%>
+</div>
 
 
 <h1>Users</h1>

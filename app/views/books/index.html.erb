@@ -1,9 +1,15 @@
 <!--投稿一覧画面-->
 
 <div class="user-info">
-
+<h1>User info</h1>
+<%= attachment_image_tag @book.user, :profile_image, :fill, 80, 80, fallback: "no_image.jpg"%>
+<p>name <%= @book.user.name %></p>
+<p>introduction <%= @book.user.introduction %> </p>
 </div>
 
+<% if @book.user_id == current_user.id %>
+    <p><%= link_to "profile Edit", edit_user_path(@book.user.id) %></p>
+<% end %>
 
 <div class="new-book">
     <h1>New book</h1>
@@ -16,12 +22,12 @@
     <% end %>
 </div>
 
-<div class="book-list">
+<div class="books">
 <h1>Books</h1>
 <% @books.each do |book| %>
-    <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
-    <p>title: <%= link_to book.title, book_path(book.id) %></p>
-    <p>body: <%= book.body %></p>
+    <%= attachment_image_tag book.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg"%>
+    <p>Title: <%= link_to book.title, book_path(book.id) %></p>
+    <p>Opinion: <%= book.body %></p>
 <% end %>
 </div>
 
