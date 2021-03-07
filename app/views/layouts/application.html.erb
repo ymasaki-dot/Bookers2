@@ -8,9 +8,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <% if user_signed_in? %>
+  
+  <header>
+     <% if user_signed_in? %>
       <li>
         <%= link_to 'Home', user_path(current_user.id) %>
       </li>
@@ -38,6 +38,10 @@
         <%= link_to "login", new_user_session_path %>
       </li>
     <% end %>
+  </header>
+
+  <body>
+    <%= render 'layouts/notification' %>
     <%= yield %>
   </body>
   <footer>
