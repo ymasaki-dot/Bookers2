@@ -17,3 +17,31 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+.navbar {
+  background-color: #343a40;
+}
+
+
+
+li.nav-item {
+ padding-bottom: 10px;
+ padding-right: 10px;
+}
+
+li.nav-item:hover {
+ text-decoration: none;
+}
+
+.user-info-image{
+    margin-bottom: 10px;
+}
+
+
+.avbar-toggler {
+  color: white;
+}
+
+.navbar-toggler-icon {
+  color: white;
+}
