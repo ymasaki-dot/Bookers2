@@ -18,20 +18,16 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-.navbar {
-  background-color: #343a40;
+
+.bookers {
+    font-size: 20px;
+    text-decoration: none;
 }
 
-
-
-li.nav-item {
- padding-bottom: 10px;
- padding-right: 10px;
+.top-text {
+    margin-left: 50px;
 }
 
-li.nav-item:hover {
- text-decoration: none;
-}
 
 .user-info-image{
     margin-bottom: 10px;
@@ -48,4 +44,8 @@ li.nav-item:hover {
 
 .table {
     margin-bottom: 0;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
 }

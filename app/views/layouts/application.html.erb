@@ -10,46 +10,30 @@
   </head>
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-     <div style="font-size: 20px;"><a  href="/" class=" text-white" >Bookers</a></div>
+      <a href="/" class="navbar-brand text-white"> Bookers</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
              <% if user_signed_in? %>
-              <li class="nav-item">
-                 <%= link_to user_path(current_user.id), class: ' text-white' do %>
-                   <i class="fas fa-home"> Home</i>
+                 <%= link_to user_path(current_user.id) do %>
+                 <li class="nav-item nav-link"><i class="fas fa-home"> Home</i></li>
                  <% end %>
-              </li>
-              <li class="nav-item">
-                <a href="/users" class="text-decoration:none text-white"><i class="fas fa-users"></i> Users<a>
-              </li>
-              <li class="nav-item">
-               <a href="/books" class=" text-white"><i class="fas fa-book-open"></i> Books<a>
-              </li>
-              <li class="nav-item">
-                <%= link_to destroy_user_session_path, method: :delete, class: ' text-white' do %>
-                <i class="fas fa-sign-in-alt"> logout</i>
+                 <li class="nav-item"><a class="nav-link" href="/users"><i class="fas fa-users"></i> Users</a></li>
+                 <li class="nav-item"><a class="nav-link" href="/books"><i class="fas fa-book-open"></i> Books<a></li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                <li class="nav-item nav-link"><i class="fas fa-sign-in-alt"> logout</i></li>
                 <% end %>
-              </li>
             <% else %>
-              <li class="nav-item">
-                <a href="/" class="nav-link text-white"><i class="fas fa-home"></i> Home<a>
-              </li>
-              <li class="nav-item">
-                <a href="/about" class="nav-link text-white"><i class="fas fa-link"></i> About<a>
-              </li>
-              <li class="nav-item">
-                <a href="/users/sign_up" class="nav-link text-white"><i class="fas fa-user-plus"></i> sign up<a>
-              </li>
-              <li class="nav-item">
-                <a href="/users/sign_in" class="nav-link text-white"><i class="fas fa-sign-in-alt"></i> login<a>
-              </li>
+                <li class="nav-item"><a class="nav-link" href="/"><i class="fas fa-home"></i> Home<a></li>
+                <li class="nav-item"><a class="nav-link" href="/about"><i class="fas fa-link"></i> About<a></li>
+                <li class="nav-item"><a class="nav-link" href="/users/sign_up"><i class="fas fa-user-plus"></i> sign up<a></li>
+                <li class="nav-item"><a class="nav-link" href="/users/sign_in"><i class="fas fa-sign-in-alt"></i> login<a></li>
             <% end %>
-            </ul>
+          </ul>
         </div>
       </div>
     </nav>
