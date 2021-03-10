@@ -7,10 +7,10 @@
     </div>
     <div class="container text-center">
       <div class="mb-3">
-        <a class="btn  btn-info w-75" href="users/sign_in" role="button">Log in</a>
+      <%= link_to 'Log in', new_user_session_path, class: 'btn btn-info' %>
       </div>
       <div class="mb-5">
-        <a class="btn  btn-success w-75" href="users/sign_up" role="button">Sign Up</a>
+      <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-success'%>
       </div>
       </div>
     </div>

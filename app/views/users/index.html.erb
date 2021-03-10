@@ -1,17 +1,20 @@
 <!--ユーザー一覧画面-->
 <div class=container>
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-md-3">
       <div class="user-info">
         <%= render 'users/info', user: @user %>
       </div>
-        <div class="new-book">
-          <%= render 'books/form', book: @book %>
-        </div>
+    </div>
+    <div class="col-md-3">
+      <div class="new-book">
+        <%= render 'books/form', book: @book %>
       </div>
-      <div class="col-lg-8">
+    </div>
+    <div clss="row">
+      <div class="col-md-8 offset-md-1">
         <h2>Users</h2>
-        <table class="table">
+          <table class="table">
           <thead>
             <tr>
               <th>image</th>
@@ -22,14 +25,14 @@
           <tbody>
             <% @users.each do |user| %>
             <tr>
-              <td><%= attachment_image_tag user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg" %></td>
+              <td><%= attachment_image_tag user, :profile_image, size: "40x40",  fallback: "no_image.jpg" %></td>
               <td><%= user.name %> </td>
               <td><%= link_to "Show", user_path(user.id) %></td>
             <% end %>
             </tr>
-            </tbody>
+          </tbody>
         </table>
-      </div>
     </div>
   </div>
-
+  </div>
+</div>

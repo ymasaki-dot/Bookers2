@@ -4,11 +4,11 @@
   <%= form_with model:book, local: true do |f| %>
     <span>Title</span>
     <div class="form_group  pt-2 pb-3">
-      <%= f.text_field :title, size:"85"%>
+      <%= f.text_field :title%>
     </div>
     <span>Opinion</span>
     <div class="form_group pt-2 pb-3" >
-      <%= f.text_area :body, size:"85" %>
+      <%= f.text_area :body %>
     </div>
     <div class="mb-3">
     <%= f.submit 'Create Book', class: "btn btn-success" %>
