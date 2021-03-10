@@ -30,8 +30,8 @@
             <% else %>
                 <li class="nav-item"><a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="/home/about"><i class="fas fa-link"></i> About</a></li>
-                <li class="nav-item nav-link"><%= link_to new_user_registration_path do %><i class="fas fa-user-plus">sign up</i><% end %></li>
-                <li class="nav-item nav-link"><%= link_to new_user_session_path do %><i class="fas fa-sign-in-alt"> login</i><% end %></li>
+                <li class="nav-item"><a class="nav-link" href="/users/sign_up"><i class="fas fa-user-plus"></i> sign up</a></li>
+                <li class="nav-item"><a class="nav-link" href="/users/sign_in"><i class="fas fa-sign-in-alt"></i> login</a></li>
             <% end %>
           </ul>
         </div>

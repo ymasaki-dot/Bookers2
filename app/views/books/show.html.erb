@@ -1,7 +1,7 @@
 <!--投稿詳細画面-->
 <div class=container>
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-md-3">
       <div class="user-info">
         <h2>User info</h2>
         <div class="user-info-image">
@@ -19,11 +19,14 @@
             <button type="button" class="btn btn-outline-secondary btn-block btn-sm mt-5 "><i class="fas fa-user-cog"></i></button>
           <% end %>
         </div>
-        <div class="new-book">
-          <%= render 'books/form', book: @book_new %>
-        </div>
     </div>
-    <div class="col-lg-8">
+    <div class="col-md-3">
+      <div class="new-book">
+          <%= render 'books/form', book: @book_new %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 offset-md-1">
         <div class="book-detail">
         <h1>Book detail</h1>
         <table class="table">
@@ -50,5 +53,6 @@
         </div>
         <span class="ml-3"><%= link_to @book.user.name, user_path(@book.user.id) %></span>
      </div>
+    </div>
   </div>
 </div>
